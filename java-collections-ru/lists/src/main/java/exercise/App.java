@@ -19,6 +19,9 @@ public class App {
                     wordSize--;
                     if(i+1 < wordList.size()) {
                         i++;
+                        index = -1;
+                    }else {
+                        break;
                     }
                 }
             }

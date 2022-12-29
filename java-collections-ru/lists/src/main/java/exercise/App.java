@@ -11,16 +11,15 @@ public class App {
         List<String> wordList = Arrays.asList(word.split(""));
         int wordSize = word.length();
         List<Integer> indexArray = new ArrayList<>();
-        for (int i = 0; i < wordList.size(); i++) {
-            for (int index = 0; index < charList.size(); index++) {
-//	            	boolean b = (charList.get(index).equalsIgnoreCase(wordList.get(i)))&&(!indexArray.contains(index));
-                if ((charList.get(index).equalsIgnoreCase(wordList.get(i)))&&(!indexArray.contains(index))) {
-                    indexArray.add(index);
+        for (int wordListIndex = 0; wordListIndex < wordList.size(); wordListIndex++) {
+            for (int charListIndex = 0; charListIndex < charList.size(); charListIndex++) {
+                if ((charList.get(charListIndex).equalsIgnoreCase(wordList.get(wordListIndex))) && (!indexArray.contains(charListIndex))) {
+                    indexArray.add(charListIndex);
                     wordSize--;
-                    if(i+1 < wordList.size()) {
-                        i++;
-                        index = -1;
-                    }else {
+                    if (wordListIndex + 1 < wordList.size()) {
+                        wordListIndex++;
+                        charListIndex = -1;
+                    } else {
                         break;
                     }
                 }

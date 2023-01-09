@@ -4,6 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AppTest {
@@ -30,6 +33,7 @@ class AppTest {
         Assertions.assertEquals(listAfterMethod.get(0), 1);
         Assertions.assertEquals(listAfterMethod.get(1), 2);
         Assertions.assertEquals(listAfterMethod, list.subList(0,2));
+        assertThat(Arrays.asList(listAfterMethod).equals(list.subList(0,2)));
         // END
     }
 }
